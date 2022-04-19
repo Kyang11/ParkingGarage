@@ -2,7 +2,7 @@ class Parkinggarage():
     def __init__(self):   
             
         self.Ticket =list(range(20))
-        self.parkingSpace=[range(20)]
+        # self.parkingSpace=list(range(20))
         self.currentTicket = {"paid":[]}
         print(""" 
                 1. check if there parking availabe:
@@ -26,7 +26,7 @@ class Parkinggarage():
         if user_input.lower() == 'pay':
             payment=input("Enter the ticket number for payment: ")
             self.Ticket.pop(len(self.Ticket)-1)
-            self.parkingSpace.pop(len(self.parkingSpace)-1)
+            # self.parkingSpace.pop(len(self.parkingSpace)-1)
             print(f"Ticket number {payment} successfully paid")
         else:
             print("incorrect option")
@@ -43,8 +43,12 @@ class Parkinggarage():
                 print('You have no pay yet')
                 
             print("The payment have been make. Thank you, have a nice day")
-            self.Ticket.pop(len(self.Ticket)+1)
-            self.parkingSpace.pop(len(self.parkingSpace)+1)
+            print(self.Ticket)
+            print(len(self.Ticket))
+            self.Ticket.append(len(self.Ticket))
+            # print(self.parkingSpace)
+            # print(len(self.parkingSpace)+1)
+            # self.parkingSpace.pop(len(self.parkingSpace)+1)
         else: 
             print("You make a wrong selection")
     def checking(self):
